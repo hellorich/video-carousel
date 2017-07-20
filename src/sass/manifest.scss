@@ -11,6 +11,10 @@
 @import 'bourbon', 'neat';
 @import 'vendor/flickity/flickity';
 
+// Atoms
+
+@import 'atoms/_mixin-maintain-ratio';
+
 // Molecules
 
 @import 'molecules/_carousel-slide';

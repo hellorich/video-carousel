@@ -3,16 +3,20 @@
 // ---------------------------------------------------------------------------------
 
 .slide {
+  @include margin(null em(30) null em(30))
+  @include padding(em(60) em(20) em(60) em(20));
   border: em(3) solid cyan;
   border-radius: em(20);
-  margin: 0 em(30);
   text-align: center;
   width: em(340);
 
+  .video-box {
+    @include maintain-ratio(1 1.775);
+  }
+  
   video {
+    @include size(100% auto);
     border: em(3) solid cyan;
     display: block;
-    margin: em(60) auto;
-    width: em(300);
   }
 }
