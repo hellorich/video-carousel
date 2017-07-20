@@ -12,6 +12,7 @@
     "grunt": "*",
     "grunt-autoprefixer": "*",
     "grunt-browser-sync": "*",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-imagemin": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-requirejs": "*",
