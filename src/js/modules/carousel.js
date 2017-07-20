@@ -11,10 +11,12 @@ define('carousel', ['jquery', 'flickity', 'polyfillPlaysInline'], function($, Fl
 
   var initCarousel = function (carousel) {
     //console.log('Initialise carousel');
+    // Can we absorb these from data attributes which can in turn be set by Wordpress
+    // Flickity should allow this fairly easily I believe
     var flkty = new Flickity( carousel, {
       adaptiveHeight: true,
       cellAlign: 'center',
-      contain: true,
+      //contain: true,
       initialIndex: 2
     });
   };

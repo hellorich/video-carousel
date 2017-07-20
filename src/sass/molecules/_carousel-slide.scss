@@ -27,4 +27,15 @@
       display:none !important;
     }
   }
+
+  // Component variant
+  // Static phone mask positioned in front of the carousel slides
+  .carousel-masked & {
+    border: none;
+
+    video {
+      @include margin(em(3)); // Mimics border size
+      border: none;
+    }
+  }
 }

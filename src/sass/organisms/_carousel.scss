@@ -4,9 +4,41 @@
 
 .carousel {
 	@include margin(em(90) auto);
+	text-align: center;
 	width: 100%;
 
 	@include media($bp-medium) {
 		width: em(660);
+	}
+
+	// Component variant
+  // Static phone mask positioned in front of the carousel slides
+	// Needs actual markup or pseudo elements to create white 'arms' to obscure the slides as they enter
+	// and exit the 'screen'
+	&.carousel-masked {
+		&:before { // Outer phone frame
+			@include position(absolute, 0 null 0 50%);
+			background-color: white;
+			border: em(3) solid cyan;
+			border-radius: em(20);
+			content:'';
+			display: block;
+			transform: translateX(-50%);
+			width: em(260);
+
+		  @include media($bp-medium) {
+		    width: em(340);
+		  }
+		}
+
+		&:after { // Inner phone frame
+			@include margin(em(60) em(20) em(60) null);
+			@include position(absolute, 0 null 0 50%);
+			border: em(3) solid cyan;
+			content:'';
+			display: block;
+			transform: translateX(-50%);
+			width: 45%;
+		}
 	}
 }
