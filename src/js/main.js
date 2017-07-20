@@ -2,8 +2,8 @@ require(['jquery', 'carousel'], function ($, carousel) {
 
   'use strict';
 
-  console.log('Main loaded');
-
-  carousel.init();
+  $('.js-carousel').each(function() {
+    carousel.init(this);
+  });
 
 });

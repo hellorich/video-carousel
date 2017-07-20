@@ -2,16 +2,16 @@ define('carousel', ['jquery', 'flickity', 'polyfillPlaysInline'], function($, Fl
 
   'use strict';
 
-  var polyfillVideos = function() {
+  var polyfillVideos = function(carousel) {
     //console.log('Polyfill videos for iOS9 and 8');
-    $('.js-carousel').find('video').each(function () {
+    $(carousel).find('video').each(function () {
  	    enableInlineVideo(this);
     });
   }
 
-  var initCarousel = function () {
+  var initCarousel = function (carousel) {
     //console.log('Initialise carousel');
-    var flkty = new Flickity( '.js-carousel', {
+    var flkty = new Flickity( carousel, {
       adaptiveHeight: true,
       cellAlign: 'center',
       contain: true,
@@ -19,30 +19,30 @@ define('carousel', ['jquery', 'flickity', 'polyfillPlaysInline'], function($, Fl
     });
   };
 
-  var setActiveCarouselVideo = function() {
+  var setActiveCarouselVideo = function(carousel) {
     //console.log('Initialise video behaviour');
-    $('.js-carousel').find('video').each( function( i, video ) {
+    $(carousel).find('video').each( function( i, video ) {
       //console.log('Pause all active videos');
       video.pause();
     });
 
-    $('.js-carousel').find('.is-selected video').each( function( i, video ) {
+    $(carousel).find('.is-selected video').each( function( i, video ) {
       //console.log('Play video in selected slide on load');
       video.play();
     });
   };
 
-  var init = function () {
+  var init = function (carousel) {
 
-    polyfillVideos();
-    initCarousel();
-    setActiveCarouselVideo();
+    polyfillVideos(carousel);
+    initCarousel(carousel);
+    setActiveCarouselVideo(carousel);
 
     // Events
     // On Flickity slide change reset active carousel video
-    $('.js-carousel').on( 'settle.flickity', function() {
+    $(carousel).on( 'settle.flickity', function() {
       //console.log('Flickity settled on a new slide');
-      setActiveCarouselVideo();
+      setActiveCarouselVideo(carousel);
     });
   };
 
