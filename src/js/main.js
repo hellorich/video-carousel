@@ -4,6 +4,6 @@ require(['jquery', 'carousel'], function ($, carousel) {
 
   console.log('Main loaded');
 
-  carousel.publicMethod('Hello');
+  carousel.init();
 
 });
