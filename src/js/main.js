@@ -1,9 +1,9 @@
-require(['jquery', 'test'], function ($, test) {
-  
+require(['jquery', 'carousel'], function ($, carousel) {
+
   'use strict';
-  
+
   console.log('Main loaded');
 
-  test.publicMethod('Hello');
+  carousel.publicMethod('Hello');
 
 });
