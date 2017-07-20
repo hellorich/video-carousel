@@ -8,15 +8,23 @@
   border: em(3) solid cyan;
   border-radius: em(20);
   text-align: center;
-  width: em(340);
+  width: em(260);
+
+  @include media($bp-medium) {
+    width: em(340);
+  }
 
   .video-box {
     @include maintain-ratio(1 1.775);
   }
-  
+
   video {
     @include size(100% auto);
     border: em(3) solid cyan;
     display: block;
+
+    &::-webkit-media-controls {
+      display:none !important;
+    }
   }
 }

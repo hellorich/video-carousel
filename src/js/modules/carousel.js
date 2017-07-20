@@ -1,6 +1,14 @@
-define('carousel', ['jquery', 'flickity'], function($, Flickity) {
+define('carousel', ['jquery', 'flickity', 'polyfillPlaysInline'], function($, Flickity, polyfillPlaysInline) {
 
   'use strict';
+
+  var polyfillVideos = function() {
+    console.log('Polyfill videos for iOS9 and 8');
+
+    $('.js-carousel').find('video').each(function () {
+ 	    enableInlineVideo(this);
+    });
+  }
 
   var initCarousel = function () {
     console.log('Initialise carousel');
@@ -38,6 +46,7 @@ define('carousel', ['jquery', 'flickity'], function($, Flickity) {
 
   var init = function () {
 
+    polyfillVideos();
     initCarousel();
     setActiveCarouselVideo();
 

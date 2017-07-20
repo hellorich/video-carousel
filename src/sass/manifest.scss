@@ -11,6 +11,10 @@
 @import 'bourbon', 'neat';
 @import 'vendor/flickity/flickity';
 
+// Utilities
+
+@import 'utilities/settings/breakpoints';
+
 // Atoms
 
 @import 'atoms/_mixin-maintain-ratio';
