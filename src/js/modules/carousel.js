@@ -1,17 +1,23 @@
-define('carousel', ['jquery'], function($) {
+define('carousel', ['jquery', 'flickity'], function($, Flickity) {
 
   'use strict';
 
-  var privateMethod = function (message) {
-    console.log(message);
+  var slider = function () {
+
+    var flkty = new Flickity( '.js-carousel', {
+
+    });
+
   };
 
-  var publicMethod = function (text) {
-    privateMethod(text);
+  var init = function () {
+
+    slider();
+
   };
 
   return {
-    publicMethod: publicMethod
+    init: init
   };
 
 });

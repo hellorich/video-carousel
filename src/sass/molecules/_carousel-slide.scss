@@ -1,0 +1,18 @@
+//
+// Carousel Slide
+// ---------------------------------------------------------------------------------
+
+.slide {
+  border: em(3) solid cyan;
+  border-radius: em(20);
+  margin: 0 em(30);
+  text-align: center;
+  width: em(340);
+
+  video {
+    border: em(3) solid cyan;
+    display: block;
+    margin: em(60) auto;
+    width: em(300);
+  }
+}

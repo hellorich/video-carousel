@@ -40,6 +40,10 @@ module.exports = function(grunt) {
         files: '<%= path.src %>/img/**/*.{gif,png,jpg,svg}',
         tasks: ['newer:imagemin']
       },
+      copy: {
+        files: '<%= path.src %>/video/**/*.{mp4,webm}',
+        tasks: ['copy']
+      },
       mustache_render: {
         files: '<%= path.src %>/mustache/**/*.{mustache,json}',
         tasks: ['mustache_render']
@@ -98,6 +102,20 @@ module.exports = function(grunt) {
           }
         ]
       },
+      gif: {
+        options: {
+          optimizationLevel: 3
+        },
+        files: [
+          {
+            cwd: '<%= path.src %>/img/gif/',
+            dest: '<%= path.dest %>/assets/img/gif/',
+            expand: true,
+            ext: '.gif',
+            src: '**/*.gif'
+          }
+        ]
+      },
       jpg: {
         options: {
           progressive: true
@@ -125,6 +143,19 @@ module.exports = function(grunt) {
             expand: true,
             ext: '.svg',
             src: '**/*.svg'
+          }
+        ]
+      }
+    },
+
+    copy: {
+      main: {
+        files: [
+          {
+            cwd: '<%= path.src %>/video/',
+            dest: '<%= path.dest %>/assets/video/',
+            expand: true,
+            src: ['**']
           }
         ]
       }
@@ -183,8 +214,11 @@ module.exports = function(grunt) {
           ]
         },
         options: {
-          watchTask: true,
-          server: '<%= path.dest %>'
+          browser: 'google chrome',
+          open: false,
+          reloadOnRestart: true,
+          server: '<%= path.dest %>',
+          watchTask: true
         }
       }
     }
@@ -195,6 +229,7 @@ module.exports = function(grunt) {
     'requirejs',
     'sass',
     'imagemin',
+    'copy',
     'mustache_render'
   ]);
 

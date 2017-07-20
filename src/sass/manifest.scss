@@ -8,3 +8,11 @@
 // Neat..................A grid framework for Bourbon: http://neat.bourbon.io
 
 @import 'bourbon', 'neat';
+
+// Molecules
+
+@import 'molecules/_carousel-slide';
+
+// Organisms
+
+@import 'organisms/_carousel';
