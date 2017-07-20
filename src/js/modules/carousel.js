@@ -12,12 +12,6 @@ define('carousel', ['jquery', 'flickity'], function($, Flickity) {
       initialIndex: 2
     });
 
-    // Force Flickity to resize for videos
-    // [TODO] - see if there's a cleaner way to do this.
-    // $(window).load( function() {
-    //   window.dispatchEvent(new Event('resize'));
-    // });
-
   };
 
   var setActiveCarouselVideo = function() {
