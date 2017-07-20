@@ -56,10 +56,12 @@ module.exports = function(grunt) {
       compile: {
         options : {
           baseUrl: '',
+          generateSourceMaps: true,
           include: '<%= path.src %>/js/main',
           mainConfigFile: '<%= path.conf %>/require.js',
           name: '<%= path.src %>/js/lib/almond',
-          out: '<%= path.dest %>/assets/js/scripts.js'
+          out: '<%= path.dest %>/assets/js/scripts.js',
+          preserveLicenseComments: false
         }
       }
     },
