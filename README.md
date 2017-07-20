@@ -1,10 +1,6 @@
-# Go
+# Video Carousel
 
-**Go** is a minimalist framework that provides a starting point for coding front end web development projects, such as small static web sites, prototype template constuction and 'design in the browser' sessions.
-
-It utilises Grunt to parse SASS, Mustache templates and carry out some basic tasks such as image optimisation and code minification in a logical directory structure.
-
-**Important:** Currently **Go** is very unfinished and subject to bugs, changes and all kinds of fun stuff. If you must use it, then in the words of Captain McAllister 'fairly warned be thee says i' :)
+A responsive video carousel utilising muted autoplaying videos, and some kind of fallback for older browsers and specifically iOS 9 and under as they do not support autoplay playinline muted.
 
 ## Installation
 
@@ -17,4 +13,3 @@ These instructions currently apply to OS X Mavericks 10.9.5 and are not tested o
 3.  Download the latest version of **Go** from [here](https://github.com/Frobitz/go/archive/master.zip) and unzip it into your projects directory root.
 4.  Install **Go** dependencies by running `npm install`.
 5.  Once all dependencies are downloaded you can begin monitoring the SASS, Jade and image directories by running the command `grunt serve` in the project root.
-  
